@@ -1,31 +1,35 @@
 import './App.css';
-import image from './Images/car.jpg';
 
 function App() {
   return (
     <>
-    <header>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>Seler</li>
-          <li>Cares</li>
-          <li></li>
-        </ul>  
-      </nav>  
-
-      <section>
-          <div className="lorem-p">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, optio. Eos consequatur rem accusantium et similique exercitationem iure porro veritatis itaque natus neque odit minus ratione iusto, nam optio minima. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem deserunt maiores sed saepe accusantium, quas neque sequi cum optio laborum repellat beatae velit molestias aperiam voluptas est nisi quo. Molestiae!
-          </div>
-
-          
-          <img src="https://media.gcflearnfree.org/ctassets/topics/246/share_flower_fullsize.jpg" alt="" />
-          <img src={image} alt="" className="img1"/>
-      </section>
-    </header> 
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+  <div className="container-fluid">
+    <a className="navbar-brand" href="#">YASH </a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Link</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form className="d-flex" role="search">
+        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <button className="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
     </>
   );
 }
 
-export default App;
+export default App; 
