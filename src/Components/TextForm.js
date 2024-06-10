@@ -3,7 +3,7 @@ import React,{useState} from 'react'
 
 export default function TextForm(props) {
     const [text , setText] = useState("Input Your Text");
-     setText("Enter Your text");
+    //  setText("Enter Your text");
 
     const handleOnChange = (event) => {
       console.log("On change");
@@ -31,6 +31,7 @@ export default function TextForm(props) {
     const handleclear = () => {
       let newText = "";
       setText(newText);
+
     }
 
   return (
@@ -41,7 +42,7 @@ export default function TextForm(props) {
             <button className='btn btn-outline-primary mt-5' onClick={handleUpChange}>Convert to Upeer Case</button> &nbsp;
             <button className='btn btn-outline-info mt-5' onClick={handleLoChange}>Convert to Lower Case</button> &nbsp;
             <button className='btn btn-outline-success mt-5' onClick={handleSpeak}>Speak</button> &nbsp;
-            <button className='btn btn-outline-warning mt-5' onClick={handleclear}>clear</button> &nbsp;
+            <button className='btn btn-outline-warning mt-5' onClick={handleclear}>clear</button>
     </div>
 
     <div className={"container"}>
