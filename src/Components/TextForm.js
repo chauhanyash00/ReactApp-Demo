@@ -38,14 +38,14 @@ export default function TextForm(props) {
     <div>
       <div className=" container m-5">
         <h1>{props.heading}</h1>
-            <textarea  className="form-control" id="exampleFormControlTextarea1" rows="10" value={text} onChange={handleOnChange}></textarea>
-            <button className='btn btn-outline-primary mt-5'onClick={handleUpChange}>Convert to Upeer Case</button> &nbsp;
-            <button className='btn btn-outline-info mt-5'onClick={handleLoChange}>Convert to Lower Case</button> &nbsp;
+            <textarea  className={`form-control bg-${props.mode === 'light' ? 'light' : 'dark'} text-${props.mode === 'light' ? 'dark' : 'light'}`} id="exampleFormControlTextarea1" rows="10" value={text} onChange={handleOnChange}></textarea>
+            <button className='btn btn-outline-primary mt-5' onClick={handleUpChange}>Convert to Upeer Case</button> &nbsp;
+            <button className='btn btn-outline-info mt-5' onClick={handleLoChange}>Convert to Lower Case</button> &nbsp;
             <button className='btn btn-outline-success mt-5' onClick={handleSpeak}>Speak</button> &nbsp;
             <button className='btn btn-outline-warning mt-5' onClick={handleclear}>clear</button>
     </div>
 
-    <div className='container'>
+    <div className={"container"}>
       <h2>Your Text Summary</h2>
       <p>{text.split(" ").length} Words</p>
       <p>{text.length} Characters</p>
