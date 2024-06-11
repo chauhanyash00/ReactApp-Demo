@@ -1,4 +1,4 @@
-import { clear } from '@testing-library/user-event/dist/clear';
+// import { clear } from '@testing-library/user-event/dist/clear';
 import React,{useState} from 'react'
 
 export default function TextForm(props) {
@@ -34,15 +34,21 @@ export default function TextForm(props) {
 
     }
 
+    const handleExtraSpace = () => {
+       let newText = text.split[/ [ ] + /];
+       setText(newText.join(" "));
+    }
+
   return (
     <div>
       <div className=" container m-5">
         <h1>{props.heading}</h1>
             <textarea  className={`form-control bg-${props.mode === 'light' ? 'light' : 'dark'} text-${props.mode === 'light' ? 'dark' : 'light'}`} id="exampleFormControlTextarea1" rows="10" value={text} onChange={handleOnChange}></textarea>
-            <button className='btn btn-outline-primary mt-5' onClick={handleUpChange}>Convert to Upeer Case</button> &nbsp;
-            <button className='btn btn-outline-info mt-5' onClick={handleLoChange}>Convert to Lower Case</button> &nbsp;
-            <button className='btn btn-outline-success mt-5' onClick={handleSpeak}>Speak</button> &nbsp;
-            <button className='btn btn-outline-warning mt-5' onClick={handleclear}>clear</button>
+            <button className='btn btn-outline-primary mx-2 my-5' onClick={handleUpChange}>Convert to Upeer Case</button>
+            <button className='btn btn-outline-info    mx-2 my-5' onClick={handleLoChange}>Convert to Lower Case</button>
+            <button className='btn btn-outline-success mx-2 my-5' onClick={handleSpeak}>Speak</button> 
+            <button className='btn btn-outline-warning mx-2 my-5' onClick={handleclear}>clear</button>
+            <button className='btn btn-outline-danger  mx-2 my-5' onClick={handleExtraSpace}> Remove Extra Space</button>
     </div>
 
     <div className={"container"}>
