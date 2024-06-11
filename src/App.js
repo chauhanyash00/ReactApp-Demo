@@ -23,7 +23,7 @@ function App() {
   }
 
   return (
-    <>
+    <>  
     <Navbar title="Chauhan" aboutText="Contact Us" mode={mode}  toggleMode = {toggleMode} btnText={btnText}></Navbar>
     <TextForm heading="Enter Text To Analyse Below" mode={mode} toggleMode={toggleMode}></TextForm>
     </>

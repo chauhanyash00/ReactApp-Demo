@@ -34,9 +34,9 @@ export default function TextForm(props) {
 
     }
 
-    const handleExtraSpace = () => {
-       let newText = text.split[/ [ ] + /];
-       setText(newText.join(" "));
+    const handleRSpace = () => {
+      let newText = text.split(/ [ ] + /);
+      setText(newText.join(" "));
     }
 
   return (
@@ -48,7 +48,7 @@ export default function TextForm(props) {
             <button className='btn btn-outline-info    mx-2 my-5' onClick={handleLoChange}>Convert to Lower Case</button>
             <button className='btn btn-outline-success mx-2 my-5' onClick={handleSpeak}>Speak</button> 
             <button className='btn btn-outline-warning mx-2 my-5' onClick={handleclear}>clear</button>
-            <button className='btn btn-outline-danger  mx-2 my-5' onClick={handleExtraSpace}> Remove Extra Space</button>
+            <button className='btn btn-outline-danger  mx-2 my-5' onClick={handleRSpace}> Remove Extra Space</button>
     </div>
 
     <div className={"container"}>
