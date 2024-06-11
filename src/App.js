@@ -1,29 +1,30 @@
+import { useState } from 'react';
 import './App.css';
-import image from './Images/car.jpg';
+import Navbar from './componets/Navbar';
+import TextForm from './componets/TextForm';
 
 function App() {
+  const [mode , setMode] = useState ("light");
+  const [btnText , setbtnText] = useState ("Enable Dark Mode");
+
+  const toggleMode = ()  => {
+    if (mode === 'light') {
+      setMode('dark')
+      document.body.style.background="black"
+      document.body.style.color="white"
+      setbtnText("Enable Light Mode")
+    } else {
+      setMode('light')
+      document.body.style.background="white"
+      document.body.style.color="black"
+      setbtnText("Enable Dark Mode")
+
+    }
+  }
   return (
     <>
-    <header>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>Seler</li>
-          <li>Cares</li>
-          <li></li>
-        </ul>  
-      </nav>  
-
-      <section>
-          <div className="lorem-p">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, optio. Eos consequatur rem accusantium et similique exercitationem iure porro veritatis itaque natus neque odit minus ratione iusto, nam optio minima. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem deserunt maiores sed saepe accusantium, quas neque sequi cum optio laborum repellat beatae velit molestias aperiam voluptas est nisi quo. Molestiae!
-          </div>
-
-          
-          <img src="https://media.gcflearnfree.org/ctassets/topics/246/share_flower_fullsize.jpg" alt="" />
-          <img src={image} alt="" className="img1"/>
-      </section>
-    </header> 
+    <Navbar heading="Chauhan" aboutUs="About Us" mode={mode} btnText={btnText} toggleMode={toggleMode}/>
+    <TextForm title="Enter the text" mode={mode} summary="Text Form Summary"/>
     </>
   );
 }
