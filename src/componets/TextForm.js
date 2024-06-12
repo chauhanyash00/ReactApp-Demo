@@ -38,7 +38,7 @@ export default function TextForm(props) {
         <div>
         <div class="container my-5">    
             <h1>{props.title}</h1>
-            <textarea class={`form-control`} id="exampleFormControlTextarea1" rows="9" value={text} onChange={changeOnText}></textarea>
+            <textarea class={`form-control bg-$`} id="exampleFormControlTextarea1" rows="9" value={text} onChange={changeOnText}></textarea>
             <button className='btn btn-outline-warning m-3' onClick={handleUpCase}>UpperCase</button>
             <button className='btn btn-outline-warning m-3' onClick={handleLoCase}>LowerCase</button>
             <button className='btn btn-outline-warning m-3' onClick={handleClear}>Clear</button>
