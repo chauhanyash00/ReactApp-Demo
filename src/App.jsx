@@ -1,8 +1,10 @@
 import  React , {useState} from 'react';
 import './App.css';
-import Navbar from './Components/Navbar.js';
-import TextForm from './Components/TextForm.js';
-import Alert from './Components/Alert.js';
+import Navbar from './Components/Navbar';
+import TextForm from './Components/TextForm';
+import Alert from './Components/Alert';
+import PrivacyPolicy from './Components/PrivacyPolicy';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -44,11 +46,30 @@ function App() {
     }
   }
 
+  const router = createBrowserRouter([
+    {
+      path: '/Home',
+      element: 
+      <>
+      <Navbar title="Chauhan" aboutText="Contact Us" mode={mode}  toggleMode = {toggleMode} btnText={btnText}></Navbar>
+      <Alert alert={alert}/>
+      <TextForm heading="Enter Text To Analyse Below" mode={mode} toggleMode={toggleMode} showAlert={showAlert}></TextForm>
+
+      </> 
+    },
+    {
+      path: '/PrivacyPolicy',
+      element: 
+      <>
+      <Navbar title="Chauhan" aboutText="Contact Us" mode={mode}  toggleMode = {toggleMode} btnText={btnText}></Navbar>
+      <PrivacyPolicy heading="Privacy Policy"/>
+      </>
+    }
+  ])
+
   return (
     <>  
-    <Navbar title="Chauhan" aboutText="Contact Us" mode={mode}  toggleMode = {toggleMode} btnText={btnText}></Navbar>
-    <Alert alert={alert}/>
-    <TextForm heading="Enter Text To Analyse Below" mode={mode} toggleMode={toggleMode} showAlert={showAlert}></TextForm>
+      <RouterProvider router={router}/>
     </>
   );
 }
